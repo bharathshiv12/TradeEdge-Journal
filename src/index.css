@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-blue: #2563eb;
+  --color-brand-cyan: #06b6d4;
+  --color-brand-green: #10b981;
+  --color-brand-red: #f43f5e;
+  
+  --color-accent: var(--color-accent);
+  --color-accent-hover: var(--color-accent-hover);
+  --color-accent-glow: var(--color-accent-glow);
+}
+
+/* ----------------------------------------------------
+   THEME VARIABLE DEFINITIONS
+   ---------------------------------------------------- */
+
+:root, .theme-dark-navy {
+  --bg-primary: #020617;
+  --bg-card: rgba(8, 17, 41, 0.55);
+  --bg-card-hover: rgba(9, 21, 51, 0.65);
+  --bg-sidebar: rgba(4, 9, 28, 0.95);
+  --color-accent: #06b6d4;  /* Cyan */
+  --color-accent-hover: #22d3ee;
+  --color-accent-glow: rgba(6, 182, 212, 0.35);
+  --color-brand: #2563eb;  /* Blue */
+  --color-border: rgba(59, 130, 246, 0.1);
+  --color-border-hover: rgba(59, 130, 246, 0.22);
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --glow-shadow: 0 0 25px rgba(6, 182, 212, 0.25);
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --metric-glow: 0 0 10px rgba(6, 182, 212, 0.4);
+}
+
+.theme-neon-purple {
+  --bg-primary: #07020d;
+  --bg-card: rgba(22, 10, 36, 0.6);
+  --bg-card-hover: rgba(28, 12, 46, 0.75);
+  --bg-sidebar: rgba(12, 4, 21, 0.95);
+  --color-accent: #c084fc;  /* Purple */
+  --color-accent-hover: #e9d5ff;
+  --color-accent-glow: rgba(168, 85, 247, 0.35);
+  --color-brand: #a855f7;  /* Brand Purple */
+  --color-border: rgba(168, 85, 247, 0.15);
+  --color-border-hover: rgba(168, 85, 247, 0.3);
+  --text-primary: #faf5ff;
+  --text-secondary: #e9d5ff;
+  --text-muted: #94a3b8;
+  --glow-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
+  --card-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.22);
+  --metric-glow: 0 0 10px rgba(168, 85, 247, 0.4);
+  
+  --color-cyan-400: #c084fc;
+  --color-cyan-500: #a855f7;
+  --color-indigo-600: #9333ea;
+  --color-purple-600: #7e22ce;
+  --color-indigo-950: #1e1135;
+}
+
+.theme-green-terminal {
+  --bg-primary: #020c08;
+  --bg-card: rgba(3, 20, 12, 0.65);
+  --bg-card-hover: rgba(4, 24, 14, 0.75);
+  --bg-sidebar: rgba(1, 14, 8, 0.95);
+  --color-accent: #10b981;  /* Emerald */
+  --color-accent-hover: #34d399;
+  --color-accent-glow: rgba(16, 185, 129, 0.3);
+  --color-brand: #059669;   /* Green */
+  --color-border: rgba(16, 185, 129, 0.12);
+  --color-border-hover: rgba(16, 185, 129, 0.26);
+  --text-primary: #f0fdf4;
+  --text-secondary: #a7f3d0;
+  --text-muted: #4b5563;
+  --glow-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
+  --card-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.15);
+  --metric-glow: 0 0 10px rgba(16, 185, 129, 0.45);
+
+  --color-cyan-400: #10b981;
+  --color-cyan-500: #059669;
+  --color-indigo-600: #047857;
+  --color-purple-600: #065f46;
+  --color-indigo-950: #021a10;
+}
+
+.theme-light {
+  --bg-primary: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.95);
+  --bg-card-hover: rgba(255, 255, 255, 1);
+  --bg-sidebar: rgba(241, 245, 249, 0.98);
+  --color-accent: #2563eb;  /* Royal Blue */
+  --color-accent-hover: #1d4ed8;
+  --color-accent-glow: rgba(37, 99, 235, 0.1);
+  --color-brand: #3b82f6;   /* Blue */
+  --color-border: rgba(203, 213, 225, 0.4);
+  --color-border-hover: rgba(148, 163, 184, 0.6);
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --glow-shadow: 0 4px 15px rgba(37, 99, 235, 0.08);
+  --card-shadow: 0 4px 20px -2px rgba(148, 163, 184, 0.12);
+  --metric-glow: none;
+
+  --color-cyan-400: #2563eb;
+  --color-cyan-500: #1d4ed8;
+  --color-indigo-600: #2563eb;
+  --color-purple-600: #3b82f6;
+  --color-indigo-950: #f1f5f9;
+  --color-indigo-500: #3b82f6;
+}
+
+.theme-cyberpunk {
+  --bg-primary: #0a0118;
+  --bg-card: rgba(28, 3, 46, 0.7);
+  --bg-card-hover: rgba(36, 4, 60, 0.85);
+  --bg-sidebar: rgba(14, 1, 24, 0.95);
+  --color-accent: #f43f5e;  /* Rose Pink */
+  --color-accent-hover: #f472b6;
+  --color-accent-glow: rgba(244, 63, 94, 0.4);
+  --color-brand: #ec4899;   /* Hot Pink */
+  --color-border: rgba(236, 72, 153, 0.18);
+  --color-border-hover: rgba(236, 72, 153, 0.35);
+  --text-primary: #fff0f6;
+  --text-secondary: #f472b6;
+  --text-muted: #6b21a8;
+  --glow-shadow: 0 0 30px rgba(244, 63, 94, 0.3);
+  --card-shadow: 0 10px 40px -5px rgba(244, 63, 94, 0.15);
+  --metric-glow: 0 0 12px rgba(244, 63, 94, 0.5);
+
+  --color-cyan-400: #ec4899;
+  --color-cyan-500: #db2777;
+  --color-indigo-600: #db2777;
+  --color-purple-600: #ec4899;
+  --color-indigo-950: #2a0820;
+}
+
+.theme-minimal-dark {
+  --bg-primary: #09090b;
+  --bg-card: rgba(18, 18, 20, 0.85);
+  --bg-card-hover: rgba(24, 24, 27, 0.95);
+  --bg-sidebar: rgba(12, 12, 14, 0.98);
+  --color-accent: #a1a1aa;  /* Zinc Grey */
+  --color-accent-hover: #e4e4e7;
+  --color-accent-glow: rgba(161, 161, 170, 0.12);
+  --color-brand: #27272a;
+  --color-border: rgba(63, 63, 70, 0.25);
+  --color-border-hover: rgba(82, 82, 91, 0.4);
+  --text-primary: #fafafa;
+  --text-secondary: #d4d4d8;
+  --text-muted: #52525b;
+  --glow-shadow: none;
+  --card-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.8);
+  --metric-glow: none;
+
+  --color-cyan-400: #a1a1aa;
+  --color-cyan-500: #71717a;
+  --color-indigo-600: #3f3f46;
+  --color-purple-600: #52525b;
+  --color-indigo-950: #18181b;
+}
+
+/* ----------------------------------------------------
+   GLOBAL TRANSITIONS & BODY WORKSPACES
+   ---------------------------------------------------- */
+
+body, html, #root {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glassmorphism custom components mapped directly to CSS theme variables */
+.glass {
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border) !important;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel {
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border) !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--color-border-hover) !important;
+  background: var(--bg-card-hover) !important;
+}
+
+.glass-panel-heavy {
+  background: var(--bg-sidebar) !important;
+  backdrop-filter: blur(20px);
+  border-right: 1px solid var(--color-border) !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-gradient {
+  background: linear-gradient(145deg, var(--bg-card), var(--bg-primary));
+  border: 1px solid var(--color-border);
+}
+
+.neon-purple {
+  color: var(--color-accent) !important;
+  text-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+.neon-blue {
+  color: var(--color-accent) !important;
+  text-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+.glow-glow-purple {
+  box-shadow: 0 0 25px -5px var(--color-accent-glow) !important;
+}
+
+.glow-glow-cyan {
+  box-shadow: 0 0 25px -5px var(--color-accent-glow) !important;
+}
+
+.p-plus {
+  color: #10b981 !important;
+}
+
+.p-minus {
+  color: #f43f5e !important;
+}
+
+/* ----------------------------------------------------
+   LIGHT THEME INTERACTIVE ELEMENTS READABILITY OVERRIDES
+   ---------------------------------------------------- */
+
+.theme-light .text-slate-100 { color: #0f172a !important; }
+.theme-light .text-slate-200 { color: #1e293b !important; }
+.theme-light .text-slate-300 { color: #334155 !important; }
+.theme-light .text-slate-400 { color: #475569 !important; }
+.theme-light .text-slate-500 { color: #64748b !important; }
+.theme-light .text-slate-400.text-xs { color: #475569 !important; }
+
+/* In Light Theme, we want border overlays to use a subtle slate grey */
+.theme-light .border-white\/5,
+.theme-light .border-white\/10,
+.theme-light .border-\[\#1e293b\]\/40,
+.theme-light .border-[#1e293b]/40,
+.theme-light .border-\[\#1e293b\]\/20,
+.theme-light .border-[#1e293b]/20,
+.theme-light .divide-\[\#1e293b\]\/25,
+.theme-light .divide-[#1e293b]/25,
+.theme-light .border-zinc-800,
+.theme-light .divide-zinc-800 {
+  border-color: rgba(148, 163, 184, 0.2) !important;
+}
+
+/* Light theme lists should have light rows */
+.theme-light tr.bg-\[\#090d21\],
+.theme-light .bg-\[\#090d21\] {
+  background-color: #f1f5f9 !important;
+}
+.theme-light .hover\:bg-\[\#070b1f\]\/30:hover,
+.theme-light tr.hover\:bg-\[\#070b1f\]\/30:hover {
+  background-color: rgba(148, 163, 184, 0.1) !important;
+}
+
+.theme-light table {
+  color: #1e293b !important;
+}
+.theme-light th {
+  color: #475569 !important;
+}
+
+/* Avoid black backgrounds inside input boxes in Light Theme */
+.theme-light .bg-\[\#05070A\],
+.theme-light .bg-slate-900,
+.theme-light .bg-slate-950,
+.theme-light .bg-slate-900\/30,
+.theme-light .bg-slate-950\/80,
+.theme-light .bg-black\/40 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+.theme-light input, 
+.theme-light select, 
+.theme-light textarea {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Prevent bright backgrounds from breaking navigation sidebar */
+.theme-light .bg-\[\#020617\],
+.theme-light .bg-[#020617] {
+  background-color: var(--bg-primary) !important;
+}
+
+/* ----------------------------------------------------
+   SYS UTILITIES & GLOBAL SETUP
+   ---------------------------------------------------- */
+
+/* Suppress scrollbars completely for the Immersive design experience */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Simple animation helpers */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.12; transform: scale(1); }
+  50% { opacity: 0.25; transform: scale(1.05); }
+}
+
+.pulse-glow-bg {
+  animation: pulseGlow 8s infinite ease-in-out;
+}
+
+/* CSS transition triggers and custom focus states */
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 15px -3px var(--color-accent-glow);
+  outline: none;
+}

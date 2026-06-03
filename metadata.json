@@ -1,0 +1,6 @@
+{
+  "name": "TradeEdge Journal",
+  "description": "A premium fintech AI-powered trading journal, trader improvement platform, analytics dashboard, and intelligent trading mentor workspace.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
